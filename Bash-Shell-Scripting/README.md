@@ -19,8 +19,18 @@ fi
 ```sh
 #!/usr/bin/env bash
 sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
-        echo $line | grep "Client-Ethernet-Address" | awk ' {print $2} '
-        echo $line | grep "Requested-IP Option"  | awk ' {print $6} '
+        if echo $line | grep "Client-Ethernet-Address" > /dev/null ; then
+                mac=$(echo $line | grep "Client-Ethernet-Address" | awk ' {print $2} ')
+        fi
+        if echo $line | grep "Hostname Option " > /dev/null ; then
+                name=$(echo $line | grep "Hostname" | awk ' {print $6} ')
+        fi
+        if echo $line | grep "Requested-IP Option" > /dev/null ; then
+                ip=$(echo $line | grep "Requested-IP Option" | awk ' {print $6} ')
+                echo  $mac
+                echo $ip
+                echo $name
+        fi
 done
 ```
 
