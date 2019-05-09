@@ -34,4 +34,4 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
 done
 ```
 
-![detector](./img/detector.PNG) 
+![detector](./img/detector.png) 
