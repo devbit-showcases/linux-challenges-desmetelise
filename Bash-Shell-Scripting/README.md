@@ -17,5 +17,11 @@ fi
 **Create a bash script that determines the IP addresses and MAC addresses of all the Raspberry Pi's currently on the network.**
 
 ```sh
-
+#!/usr/bin/env bash
+sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
+        echo $line | grep "Client-Ethernet-Address" | awk ' {print $2} '
+        echo $line | grep "Requested-IP Option"  | awk ' {print $6} '
+done
 ```
+
+![detector](./img/detector.PNG) 
