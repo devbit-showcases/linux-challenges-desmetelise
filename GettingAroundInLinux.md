@@ -14,7 +14,7 @@ The default action is to display all messages from the kernel ring buffer.
 
 man free
 
-![manPagesOfFree](./img/manfree.png)
+![manPagesOfFree](./img/manfree.PNG)
 
 free -h
 
@@ -24,4 +24,4 @@ free -h
 
 **Use grep on the file /proc/cpuinfo to get the number of CPU cores. The output can simple be the number of cores (including logical cores).**
 
-![NumberOfCores](./img/cores.png)
+![NumberOfCores](./img/cores.PNG)

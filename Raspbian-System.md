@@ -8,7 +8,7 @@
 
 **Update the system and change the password of the pi user.**
 
-![Change-Password](./img/password.png)
+![Change-Password](./img/password.PNG)
 
 **Search the Internet on how to change the hostname of the device. Give it a sensible name.**
 
