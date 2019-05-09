@@ -35,3 +35,4 @@ done
 ```
 
 ![detector](./img/detector.png) 
+![detector](./img/detectorOutput.PNG) 
