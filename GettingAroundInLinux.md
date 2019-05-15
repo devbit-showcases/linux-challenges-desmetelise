@@ -4,9 +4,7 @@
 
 man dmesg
 
-dmesg is used to examine or control the kernel ring buffer.
-
-The default action is to display all messages from the kernel ring buffer.
+![dmesg](./img/dmesg.PNG)
 
 ## Challenge 2: The free command
 
