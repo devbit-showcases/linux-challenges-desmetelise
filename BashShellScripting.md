@@ -47,6 +47,7 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
                 echo  $mac
                 echo $ip
                 echo $name
+                echo {"time": "$(date)","update":{"mac":"$mac","ip":"$ip", "name":$name}}
         fi
 done
 ```
