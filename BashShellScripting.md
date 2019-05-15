@@ -22,7 +22,7 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
         if echo $line | grep "Requested-IP Option" > /dev/null ; then
                 ip=$(echo $line | grep "Requested-IP Option" | awk ' {print $6} ')
-                echo $mac "=>" $ip "(" $name ")"
+                echo $(date) ": " $mac "=>" $ip "(" $name ")"
         fi
 done
 ```
