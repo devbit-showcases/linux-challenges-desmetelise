@@ -9,6 +9,7 @@ When the flashing is done, add a .txt file to boot map (on the SD card). Rename 
 
 **Connect to your Raspberry Pi via SSH**
 
+![Putty](./img/putty.PNG)
 
 **Update the system and change the password of the pi user.**
 Update:
@@ -25,6 +26,8 @@ passwd
 
 **Search the Internet on how to change the hostname of the device. Give it a sensible name.**
 
-
-
-![ifconfig](./img/ifconfig.png)
+Change hostname:
+```
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+```
