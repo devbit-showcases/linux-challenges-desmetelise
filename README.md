@@ -17,16 +17,16 @@ Happy Hacking.
 
 ### Introduction
 
-[Introduction](../linux-challenges-desmetelise/Introduction.md)
+[Introduction](Introduction.md)
 
 ### Raspbian System
 
-[RaspbianSystem](../linux-challenges-desmetelise/Raspbian-System.md)
+[RaspbianSystem](Raspbian-System.md)
 
 ### Getting Around In Linux
 
-[GettingAroundInLinux](../linux-challenges-desmetelise/GettingAroundInLinux.md)
+[GettingAroundInLinux](GettingAroundInLinux.md)
 
 ### Bash Shell Scripting
 
-[BashShellScripting](../linux-challenges-desmetelise/BashShellScripting.md)
+[BashShellScripting](BashShellScripting.md)
