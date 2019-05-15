@@ -5,11 +5,7 @@
 ```sh
 #!/usr/bin/env bash
 cd ~/.ssh
-if [ ! -e authorized_keys ]; then
-curl https://github.com/desmetelise.keys >> authorized_keys
-else
-echo "Authorized_key is already present."
-fi
+curl https://github.com/desmetelise.keys >> ~/.ssh/authorized_keys
 ```
 
 ## Challenge 2: RPi Detector
