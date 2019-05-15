@@ -15,14 +15,18 @@ Some tips:
 
 Happy Hacking.
 
-###Introduction
-[Introduction](../Introduction.md)
+### Introduction
 
-###Raspbian System
-[RaspbianSystem](../Raspbian-System.md)
+[Introduction](../linux-challenges-desmetelise/Introduction.md)
 
-###Getting Around In Linux
-[GettingAroundInLinux](../GettingAroundInLinux.md)
+### Raspbian System
 
-###Bash Shell Scripting
-[BashShellScripting](../BashShellScripting.md)
+[RaspbianSystem](../linux-challenges-desmetelise/Raspbian-System.md)
+
+### Getting Around In Linux
+
+[GettingAroundInLinux](../linux-challenges-desmetelise/GettingAroundInLinux.md)
+
+### Bash Shell Scripting
+
+[BashShellScripting](../linux-challenges-desmetelise/BashShellScripting.md)
