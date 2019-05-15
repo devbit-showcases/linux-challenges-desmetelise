@@ -8,14 +8,14 @@
 
 **Search the Internet for the standard C library functions that allow you to perform the following tasks:**
 
-Open a file: ```fopen("filename", "r")```
-Write text to a file: ```fopen("filename", "w")```
-Close the file: ```fclose("filename")```
-Open an i2c device: ```FILE *file = fopen("/dev/i2c-l"; "w")```
-Write data to an i2c device: ```fputs("data", "filename")```
-Close the i2c device: ```fclose("filename")```
-Create a child process / copy of current process: ```pid_t fork```
-Create a file: ```fopen("filename", "w")```
+* Open a file: ```fopen("filename", "r")```
+* Write text to a file: ```fopen("filename", "w")```
+* Close the file: ```fclose("filename")```
+* Open an i2c device: ```FILE *file = fopen("/dev/i2c-l"; "w")```
+* Write data to an i2c device: ```fputs("data", "filename")```
+* Close the i2c device: ```fclose("filename")```
+* Create a child process / copy of current process: ```pid_t fork```
+* Create a file: ```fopen("filename", "w")```
 
 **What do you notice about the functions to interact with a file and those to interact with an i2c device?**
 
