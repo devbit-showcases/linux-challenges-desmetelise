@@ -17,16 +17,16 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         if echo $line | grep "Client-Ethernet-Address" > /dev/null ; then
                 mac=$(echo $line | grep "Client-Ethernet-Address" | awk ' {print $2} ')
         fi
-        if echo $line | grep "Hostname Option " > /dev/null ; then
-                name=$(echo $line | grep "Hostname" | awk ' {print $6} ')
-        fi
         if echo $line | grep "Requested-IP Option" > /dev/null ; then
                 ip=$(echo $line | grep "Requested-IP Option" | awk ' {print $6} ')
-                echo $mac => $ip "(" $name ")"
+        fi
+        if echo $line | grep "Hostname Option " > /dev/null ; then
+                name=$(echo $line | grep "Hostname" | awk ' {print $6} ')
+                echo $mac "=>" $ip "(" $name ")"
         fi
 done
 ```
- 
+ ![detector](./img/rpidetector.png) 
 
 ## Challenge 3: Posten to API
 
@@ -39,18 +39,16 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         if echo $line | grep "Client-Ethernet-Address" > /dev/null ; then
                 mac=$(echo $line | grep "Client-Ethernet-Address" | awk ' {print $2} ')
         fi
-        if echo $line | grep "Hostname Option " > /dev/null ; then
-                name=$(echo $line | grep "Hostname" | awk ' {print $6} ')
-        fi
         if echo $line | grep "Requested-IP Option" > /dev/null ; then
                 ip=$(echo $line | grep "Requested-IP Option" | awk ' {print $6} ')
+        fi
+        if echo $line | grep "Hostname Option " > /dev/null ; then
+                name=$(echo $line | grep "Hostname" | awk ' {print $6} ')
                 echo  $mac
                 echo $ip
                 echo $name
-                echo {"time": "$(date)","update":{"mac":"$mac","ip":"$ip", "name":$name}}
+                echo '{"time": "'$(date)'","update":{"mac":"'$mac'","ip":"'$ip'", "name":'$name'}}' | jq .
         fi
 done
 ```
-
-![detector](./img/detector.png) 
-![detector](./img/detectorOutput.PNG)
+ ![posttoapi](./img/posttoapi.png) 
