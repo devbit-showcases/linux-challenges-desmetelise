@@ -26,7 +26,7 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
 done
 ```
- ![detector](./img/rpidetector.png) 
+ ![detector](./img/rpidetector.PNG) 
 
 ## Challenge 3: Posten to API
 
@@ -51,4 +51,4 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
 done
 ```
- ![posttoapi](./img/posttoapi.png) 
+ ![posttoapi](./img/posttoapi.PNG) 
