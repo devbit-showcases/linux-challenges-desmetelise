@@ -47,7 +47,7 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
                 echo  $mac
                 echo $ip
                 echo $name
-                JsonString=$(echo '{"time": "'$(date)'","update":{"mac":"'$mac'","ip_address":"'$ip'", "name":'$name'}}$                µ
+                JsonString=$(echo '{"time": "'$(date)'","update":{"mac":"'$mac'","ip_address":"'$ip'", "name":'$name'}}' | jq .)
                 curl --header "Content-Type: application/json" \
                 --request POST \
                 --data "$JsonString" \
@@ -57,3 +57,11 @@ done
 ```
  ![posttoapi](./img/posttoapi.PNG) 
  ![api](./img/api.PNG) 
+
+ ## Challenge 4: Extra Pi info
+
+**Next create a cronjob that updates some stats of the pi. Choose a useful time schedule yourself.**
+
+```ssh
+
+```
