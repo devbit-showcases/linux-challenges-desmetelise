@@ -62,6 +62,13 @@ done
 
 **Next create a cronjob that updates some stats of the pi. Choose a useful time schedule yourself.**
 
-```ssh
-
+```sh
+#!/usr/bin/env bash
+mac=$(cat /sys/class/net/eth0/address)
+uptime=$(uptime -p)
+hostname=$(cat /proc/sys/kernel/hostname)
+kernel=$(uname -r)
+JsonString=$(echo '{"stats":{"hostname": "'$hostname'","mac":"'$mac'","uptime":"'$uptime'","kernel": "'$kernel'"}}')
+echo $JsonString | jq .
 ```
+![info](./img/info.PNG) 
