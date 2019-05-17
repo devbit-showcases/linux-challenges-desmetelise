@@ -47,8 +47,13 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
                 echo  $mac
                 echo $ip
                 echo $name
-                echo '{"time": "'$(date)'","update":{"mac":"'$mac'","ip":"'$ip'", "name":'$name'}}' | jq .
+                JsonString=$(echo '{"time": "'$(date)'","update":{"mac":"'$mac'","ip_address":"'$ip'", "name":'$name'}}$                µ
+                curl --header "Content-Type: application/json" \
+                --request POST \
+                --data "$JsonString" \
+                http://mydevices.labict.xyz/updates.json
         fi
 done
 ```
  ![posttoapi](./img/posttoapi.PNG) 
+ ![api](./img/api.PNG) 
