@@ -18,6 +18,7 @@
 * Create a file: ```fopen("filename", "w")```
 
 **What do you notice about the functions to interact with a file and those to interact with an i2c device?**
+Operations use the same function on files and devices.
 
 ## Challenge 3: Groups
 
