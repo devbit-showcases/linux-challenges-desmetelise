@@ -70,7 +70,7 @@ mac=$(cat /sys/class/net/eth0/address)
 uptime=$(uptime -p)
 hostname=$(cat /proc/sys/kernel/hostname)
 kernel=$(uname -r)
-freeDisk=$(df / -h | grep /dev/root | awk ' {print $3} ')
+freeDisk=$(df / -h | grep /dev/root | awk ' {print $4} ')
 totalDisk=$(df / -h | grep /dev/root | awk ' {print $2} ')
 freeMem=$(free -m -h| grep Mem | awk ' {print $4} ')
 totalMem=$(free -m -h| grep Mem | awk ' {print $2} ')
@@ -87,7 +87,8 @@ Public API can be found [here](http://mydevices.labict.xyz/stats)
 ![info](./img/info.PNG) 
 ![stats](./img/stats.PNG)
 
-![crontab](./img/crontab.PNG) 
 
 Some information about Cronjobs:
 ![cron](./img/Cron.PNG) 
+![crontab](./img/crontab.PNG) 
+
