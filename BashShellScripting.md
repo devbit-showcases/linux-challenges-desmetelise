@@ -69,12 +69,17 @@ uptime=$(uptime -p)
 hostname=$(cat /proc/sys/kernel/hostname)
 kernel=$(uname -r)
 freeDisk=$(df / -h | grep /dev/root | awk ' {print $3} ')
-freeDisk=$(df / -h | grep /dev/root | awk ' {print $2} ')
+totalDisk=$(df / -h | grep /dev/root | awk ' {print $2} ')
 freeMem=$(free -m -h| grep Mem | awk ' {print $4} ')
 totalMem=$(free -m -h| grep Mem | awk ' {print $2} ')
-JsonString=$(echo '{"stats":{"mac":"'$mac'","disk": {"free": "'$freeDisk'", "total": "'totalDisk'"}, "memory":{"free":"'$freeMem'","total":"'$totalMem'"},"hostname": "'$hostname'","uptime":"'$uptime'","kernel": "'$kernel'"}}')
+JsonString=$(echo '{"stat":{"mac":"'$mac'","disk": {"free": "'$freeDisk'", "total": "'$totalDisk'"}, "memory":{"free":"'$freeMem'","total":"'$totalMem'"},"hostname": "'$hostname'","uptime":"'$uptime'","kernel": "'$kernel'"}}')
 echo $JsonString | jq .
+curl --header "Content-Type: application/json" \
+                --request POST \
+                --data "$JsonString" \
+                http://mydevices.labict.xyz/stats.json
 touch /tmp/done.txt
 ```
 ![info](./img/info.PNG) 
+![stats](./img/stats.PNG)
 ![crontab](./img/crontab.PNG) 
