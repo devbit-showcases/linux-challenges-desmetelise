@@ -72,7 +72,9 @@ freeDisk=$(df / -h | grep /dev/root | awk ' {print $3} ')
 freeDisk=$(df / -h | grep /dev/root | awk ' {print $2} ')
 freeMem=$(free -m -h| grep Mem | awk ' {print $4} ')
 totalMem=$(free -m -h| grep Mem | awk ' {print $2} ')
-JsonString=$(echo '{"stats":{"mac":"'$mac'","disk": {"free": "'$freeDisk'", "total": "'totalDisk'"}, "memory":{"free$echo $JsonString | jq .
+JsonString=$(echo '{"stats":{"mac":"'$mac'","disk": {"free": "'$freeDisk'", "total": "'totalDisk'"}, "memory":{"free":"'$freeMem'","total":"'$totalMem'"},"hostname": "'$hostname'","uptime":"'$uptime'","kernel": "'$kernel'"}}')
+echo $JsonString | jq .
+touch /tmp/done.txt
 ```
 ![info](./img/info.PNG) 
 ![crontab](./img/crontab.PNG) 
