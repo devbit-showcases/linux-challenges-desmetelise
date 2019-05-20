@@ -1,6 +1,6 @@
 ## Challenge 1: RPi Setup Script
 
-**Create a bash script that takes care of the full SSH setup of your Raspberry Pi. Fetch your public keys from Github using curl or a similar tool.**
+**This is a bash script that takes care of the full SSH setup of your Raspberry Pi. It fetches your public keys from Github using curl.**
 
 ```sh
 #!/usr/bin/env bash
@@ -10,7 +10,7 @@ curl https://github.com/desmetelise.keys >> ~/.ssh/authorized_keys
 
 ## Challenge 2: RPi Detector
 
-**Create a bash script that determines the IP addresses and MAC addresses of all the Raspberry Pi's currently on the network.**
+**This bash script  determines the IP addresses and MAC addresses of all the Raspberry Pi's currently on the network.**
 ```sh
 #!/usr/bin/env bash
 sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
@@ -30,7 +30,7 @@ done
 
 ## Challenge 3: Posten to API
 
-**Next the gathered information should be posted to the api of my-devices.**
+**Next the gathered information is posted to the api of my-devices.**
 
 
 ```sh
@@ -60,7 +60,7 @@ done
 
  ## Challenge 4: Extra Pi info
 
-**Next create a cronjob that updates some stats of the pi. Choose a useful time schedule yourself.**
+**Next a cronjob that updates some stats of the pi is created.**
 
 ```sh
 #!/usr/bin/env bash
