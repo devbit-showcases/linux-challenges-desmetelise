@@ -68,8 +68,11 @@ mac=$(cat /sys/class/net/eth0/address)
 uptime=$(uptime -p)
 hostname=$(cat /proc/sys/kernel/hostname)
 kernel=$(uname -r)
-JsonString=$(echo '{"stats":{"hostname": "'$hostname'","mac":"'$mac'","uptime":"'$uptime'","kernel": "'$kernel'"}}')
-echo $JsonString | jq .
+freeDisk=$(df / -h | grep /dev/root | awk ' {print $3} ')
+freeDisk=$(df / -h | grep /dev/root | awk ' {print $2} ')
+freeMem=$(free -m -h| grep Mem | awk ' {print $4} ')
+totalMem=$(free -m -h| grep Mem | awk ' {print $2} ')
+JsonString=$(echo '{"stats":{"mac":"'$mac'","disk": {"free": "'$freeDisk'", "total": "'totalDisk'"}, "memory":{"free$echo $JsonString | jq .
 ```
 ![info](./img/info.PNG) 
 ![crontab](./img/crontab.PNG) 
