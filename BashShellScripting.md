@@ -72,3 +72,4 @@ JsonString=$(echo '{"stats":{"hostname": "'$hostname'","mac":"'$mac'","uptime":"
 echo $JsonString | jq .
 ```
 ![info](./img/info.PNG) 
+![crontab](./img/crontab.PNG) 
