@@ -32,4 +32,4 @@ Go to: [GettingAroundInLinux](GettingAroundInLinux.md)
 Go to: [BashShellScripting](BashShellScripting.md)
 
 ## Over The Wire
-Go to: [OverTheWire](OverTheWire.md)
+Go to: [OverTheWire](OverThewire.md)
