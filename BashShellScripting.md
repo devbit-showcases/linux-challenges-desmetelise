@@ -55,6 +55,8 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
 done
 ```
+Public API can be found [here](http://mydevices.labict.xyz/updates)
+
  ![posttoapi](./img/posttoapi.PNG) 
  ![api](./img/api.PNG) 
 
@@ -80,6 +82,8 @@ curl --header "Content-Type: application/json" \
                 http://mydevices.labict.xyz/stats.json
 touch /tmp/done.txt
 ```
+Public API can be found [here](http://mydevices.labict.xyz/stats)
+
 ![info](./img/info.PNG) 
 ![stats](./img/stats.PNG)
 ![crontab](./img/crontab.PNG) 
