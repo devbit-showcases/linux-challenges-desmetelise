@@ -8,6 +8,11 @@ cd ~/.ssh
 curl https://github.com/desmetelise.keys >> ~/.ssh/authorized_keys
 ```
 
+* cd: Change directory (~ is a shortcut to traverse to your home directory.)
+* curl: Transfers data to or from a network server. 
+* ">>": Redirects output to a file appending the redirected output at the end
+
+
 ## Challenge 2: RPi Detector
 
 **This bash script  determines the IP addresses and MAC addresses of all the Raspberry Pi's currently on the network.**
@@ -26,6 +31,21 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
 done
 ```
+
+* sudo: Allows a user with proper permissions to execute a command as another user, such as the superuser.
+* tcpdump: Package analyzer tool which is used to campture or filter TCP/IP pachets that received or transferred over a network on a specific interface.
+  * -n option: To capture packets for a specific interface.
+  * -e option: Print the link-level header on each dump line.
+  * -l option: Output line by line, allowing usage of pipes
+  * -vvv option: Verbose mode, this provides additional details.
+  * 'udp port 67 or udp port 68': monitor traffic on port 67 and 68.
+* while read line: Read file line by line
+* if loops: If the line contains the given text then it will define a variable with the info we want.
+  * grep: (global reqular expression print) Processes text line by line and prints any lines which match a specified pattern.
+  * ">": Redirects output to a file, overwriting the file.
+  * awk ' {print $1} ': Takes the first word of the line.
+  * echo: print line of text.
+
  ![detector](./img/rpidetector.PNG) 
 
 ## Challenge 3: Posten to API
@@ -55,6 +75,13 @@ sudo tcpdump -n -e -l -vvv 'udp port 67 or udp port 68' | while read line; do
         fi
 done
 ```
+
+* jq: command-line JSON processor.
+* curl: Transfers data to or from a network server. 
+  * --header: Extra header to use when getting a web page.
+  * --request: The request method to use.
+  * --data: Send specified data in POST request.
+
 Public API can be found [here](http://mydevices.labict.xyz/updates)
 
  ![posttoapi](./img/posttoapi.PNG) 
