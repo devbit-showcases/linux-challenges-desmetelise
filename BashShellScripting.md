@@ -34,7 +34,7 @@ done
 
 * sudo: Allows a user with proper permissions to execute a command as another user, such as the superuser.
 * tcpdump: Package analyzer tool which is used to campture or filter TCP/IP pachets that received or transferred over a network on a specific interface.
-  * -n option: To capture packets for a specific interface.
+  * -n option: Don't convert addressess to names.
   * -e option: Print the link-level header on each dump line.
   * -l option: Output line by line, allowing usage of pipes
   * -vvv option: Verbose mode, this provides additional details.
